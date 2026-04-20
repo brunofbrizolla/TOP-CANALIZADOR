@@ -1,8 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import CookieConsent from '../components/CookieConsent.astro';
 
 // Serviço: Reparações & Manutenções (Automated Page Generation)
 
@@ -12,22 +9,24 @@ import Section10 from '../components/Section10.astro';
 import Section11 from '../components/Section11.astro';
 import WhoWeAre from '../components/WhoWeAre.astro';
 import HowItWorks from '../components/HowItWorks.astro';
+
+import inner_service_04Img from '../assets/images/inner_service_04.jpg';
+import inner_service_04Img_1 from '../assets/images/inner_service_04.jpg';
+import inner_service_04Img_2 from '../assets/images/inner_service_04.jpg';
 ---
 
 <Layout 
   title="Reparações & Manutenções - Top Canalizador"
   bodyClass="wp-singular page-template-default page page-id-1379 wp-theme-prohauz bt_bb_plugin_active btStickyEnabled btLightSkin btBelowMenu btNoDashInSidebar noBodyPreloader btSoftRoundedButtons btOpacityLightHeader btNoSidebar"
 >
-  <Header />
-
-  <div class="btPageWrap" id="top">
-    <div class="btContentWrap btClear">
+  
+      <div class="btContentWrap btClear">
       <div class="btContentHolder">
         <div class="btContent">
           <div class="bt_bb_wrapper">
 
   <!-- Hero Section -->
-  <section class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image" style="background-image: url('https://topcanalizador.com/wp-content/uploads/2018/10/inner_service_04.jpg'); background-position: center; background-size: cover; position: relative;">
+  <section class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image" style="background-image: url('${inner_service_04Img.src}'); background-position: center; background-size: cover; position: relative;">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(12, 28, 44, 0.8), rgba(12, 28, 44, 0.4)); z-index: 0;"></div>
     <div class="bt_bb_port" style="position: relative; z-index: 1;">
         <div class="bt_bb_cell">
@@ -232,8 +231,4 @@ import HowItWorks from '../components/HowItWorks.astro';
         </div>
       </div>
     </div>
-  </div>
-
-  <Footer />
-  <CookieConsent />
-</Layout>
+  </Layout>

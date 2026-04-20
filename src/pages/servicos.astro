@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import CookieConsent from '../components/CookieConsent.astro';
+
 
 // Clone exato da página de Serviços baseada no HTML original
 ---
@@ -12,9 +10,7 @@ import CookieConsent from '../components/CookieConsent.astro';
   description="Os melhores Serviços de Canalização particular, comercial e industrial, desentupimentos, limpeza de fossas e reparações 24h todos os dias do ano!"
   bodyClass="wp-singular page-template-default page page-id-1379 wp-theme-prohauz bt_bb_plugin_active btStickyEnabled btLightSkin btBelowMenu btNoDashInSidebar noBodyPreloader btSoftRoundedButtons btOpacityLightHeader btNoSidebar"
 >
-  <Header />
 
-  <div class="btPageWrap" id="top">
     <div class="btContentWrap btClear">
       <div class="btContentHolder">
         <div class="btContent">
@@ -22,7 +18,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 
   <main>
     <!-- HERO SECTION -->
-    <section id="bt_bb_section_67b4946399049" class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image bt_bb_background_overlay_gradient" style="background-image:url(https://topcanalizador.com/wp-content/uploads/2018/10/background_heating_07.jpg); --section-primary-color:#005299; --section-secondary-color:rgba(0,82,153,0);">
+    <section id="bt_bb_section_67b4946399049" class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image bt_bb_background_overlay_gradient" style="background-image:url(/wp-content/uploads/2018/10/background_heating_07.jpg); --section-primary-color:#005299; --section-secondary-color:rgba(0,82,153,0);">
         <div class="bt_bb_port">
             <div class="bt_bb_cell">
                 <div class="bt_bb_cell_inner">
@@ -66,7 +62,7 @@ import CookieConsent from '../components/CookieConsent.astro';
                             </div>
                         </div>
                         <div class="bt_bb_column col-xxl-6 col-xl-6 bt_bb_animation_fade_in animate">
-                             <div class="bt_bb_image"><img src="https://topcanalizador.com/wp-content/uploads/2019/06/servicos-canalizacao.jpg" alt="Serviços de Canalização"></div>
+                             <div class="bt_bb_image"><img src="/wp-content/uploads/2019/06/servicos-canalizacao.jpg" alt="Serviços de Canalização"></div>
                         </div>
                     </div>
                 </div>
@@ -178,9 +174,4 @@ import CookieConsent from '../components/CookieConsent.astro';
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <Footer />
-  <CookieConsent />
-</Layout>
+    </Layout>

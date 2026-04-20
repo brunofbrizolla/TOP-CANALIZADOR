@@ -1,5 +1,13 @@
 ---
 // Header Component (DESKTOP + CUSTOM INDESTRUCTIBLE MOBILE NAV)
+import logoWhite from '../assets/images/logo-white.png';
+import logoColors from '../assets/images/logo-colors.png';
+
+import logo_whiteImg from '../assets/images/logo-white.png';
+import logo_whiteImg_1 from '../assets/images/logo-white.png';
+import logo_colorsImg from '../assets/images/logo-colors.png';
+import logo_whiteImg_2 from '../assets/images/logo-white.png';
+import logo_colorsImg_1 from '../assets/images/logo-colors.png';
 ---
 
 <!-- DESKTOP HEADER (Managed by WordPress native classes, hidden on Mobile by default) -->
@@ -9,7 +17,7 @@
       <div class="port">
         <div class="logo"> 
           <span> 
-            <a href="/"><img class="btMainLogo" data-hw="1.72" src="/wp-content/uploads/2019/06/logo-white.png" alt="Top Canalizador"><img class="btAltLogo" src="/wp-content/uploads/2019/06/logo-colors.png" alt="Top Canalizador"></a> 
+            <a href="/"><img class="btMainLogo" data-hw="1.72" src={logoWhite.src} alt="Top Canalizador"><img class="btAltLogo" src={logoColors.src} alt="Top Canalizador"></a> 
           </span>
         </div>
         <div class="menuPort"> 
@@ -45,7 +53,7 @@
 <div class="custom-mobile-header-navbar">
   <div class="mobile-nav-container">
     <div class="mobile-logo">
-      <a href="/"><img src="/wp-content/uploads/2019/06/logo-white.png" alt="Top Canalizador" /></a>
+      <a href="/"><img src={logoWhite.src} alt="Top Canalizador" /></a>
     </div>
     
     <div class="mobile-actions-group">
@@ -69,7 +77,7 @@
 <div class="custom-mobile-drawer" id="mobile-menu-port">
   <div class="drawer-header">
     <div class="drawer-logo">
-       <img src="/wp-content/uploads/2019/06/logo-white.png" alt="Top Canalizador" />
+       <img src={logo_whiteImg.src} alt="Top Canalizador" />
     </div>
     <button class="drawer-close-btn" id="mobile-menu-close" aria-label="Fechar Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">

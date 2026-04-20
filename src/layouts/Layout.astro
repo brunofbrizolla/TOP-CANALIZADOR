@@ -1,6 +1,8 @@
 ---
 // Layout.astro
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
@@ -14,6 +16,37 @@ const {
   description = "Canalizador 24h, desentupimentos | Limpeza de fossas | Canalização. equipa especializada de técnicos disponiveis 24 horas, Zona de lisboa",
   bodyClass = ""
 } = Astro.props;
+
+// Standardize classes for consistency
+const baseClasses = "wp-singular page-template-default page bt_bb_plugin_active btStickyEnabled btLightSkin btBelowMenu btNoDashInSidebar noBodyPreloader btSoftRoundedButtons btOpacityLightHeader btNoSidebar btMenuRightEnabled btCapitalizeMainMenuItems btHeadingWeight_default";
+const isHome = bodyClass.includes('home') ? 'home' : '';
+const finalBodyClass = `${isHome} ${baseClasses}`.trim();
+
+import logo_colorsImg from '../assets/images/logo-colors.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_32x32Img from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-32x32.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_192x192Img from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-192x192.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_180x180Img from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-180x180.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_270x270Img from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-270x270.png';
+import logo_colorsImg_1 from '../assets/images/logo-colors.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_32x32Img_1 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-32x32.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_192x192Img_1 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-192x192.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_180x180Img_1 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-180x180.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_270x270Img_1 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-270x270.png';
+import logo_colorsImg_2 from '../assets/images/logo-colors.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_32x32Img_2 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-32x32.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_192x192Img_2 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-192x192.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_180x180Img_2 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-180x180.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_270x270Img_2 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-270x270.png';
+import logo_colorsImg_3 from '../assets/images/logo-colors.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_32x32Img_3 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-32x32.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_192x192Img_3 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-192x192.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_180x180Img_3 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-180x180.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_270x270Img_3 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-270x270.png';
+import logo_colorsImg_4 from '../assets/images/logo-colors.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_32x32Img_4 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-32x32.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_192x192Img_4 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-192x192.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_180x180Img_4 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-180x180.png';
+import cropped_favicon_top_canalizador_lisboa_desentupimentos_canaliza_ao_270x270Img_4 from '../assets/images/cropped-favicon-top-canalizador-lisboa-desentupimentos-canalizaçao-270x270.png';
 ---
 <!doctype html>
 <html lang="en-US" data-bt-theme="Prohauz 1.2.8">
@@ -26,7 +59,7 @@ const {
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
 <script is:inline data-cfasync="false" data-pagespeed-no-defer>var gtm4wp_datalayer_name="dataLayer";
 var dataLayer=dataLayer||[];</script>
-<script is:inline>console.log("LAYOUT.ASTRO LOADED"); var gdpr_options = {};</script>
+<script is:inline>var gdpr_options = {};</script>
 <title>{title}</title>
 <meta name="description" content={description}/>
 <link rel="canonical" href="/"/>
@@ -37,12 +70,12 @@ var dataLayer=dataLayer||[];</script>
 <meta property="og:url" content="/"/>
 <meta property="og:site_name" content="Top Canalizador"/>
 <meta property="article:modified_time" content="2020-09-13T13:22:32+00:00"/>
-<meta property="og:image" content="/wp-content/uploads/2019/06/wp-content/uploads/2019/06/logo-colors.png"/>
+<meta property="og:image" content="/wp-content/uploads/2019/06/logo-colors.png"/>
 <meta property="og:image:width" content="344"/>
 <meta property="og:image:height" content="200"/>
 <meta property="og:image:type" content="image/png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script is:inline type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://topcanalizador.com/","url":"https://topcanalizador.com/","name":"Top Canalizador - Canalizador 24h | Desentupimentos | Limpeza de fossas","isPartOf":{"@id":"https://topcanalizador.com/#website"},"about":{"@id":"https://topcanalizador.com/#organization"},"datePublished":"2018-09-19T13:08:17+00:00","dateModified":"2020-09-13T13:22:32+00:00","description":"Canalizador 24h, desentupimentos | Limpeza de fossas | Canalização. equipa especializada de técnicos disponiveis 24 horas, Zona de lisboa","breadcrumb":{"@id":"https://topcanalizador.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://topcanalizador.com/"]}]},{"@type":"BreadcrumbList","@id":"https://topcanalizador.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://topcanalizador.com/#website","url":"https://topcanalizador.com/","name":"Top Canalizador","description":"Serviço de Canalizador ,Serviços em lisboa, loures, odivelas, Desentupimentos e Limpeza de fossas. Conte  equipa especializada de técnicos 24h.","publisher":{"@id":"https://topcanalizador.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://topcanalizador.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://topcanalizador.com/#organization","name":"Top Canalizador","url":"https://topcanalizador.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://topcanalizador.com/#/schema/logo/image/","url":"/wp-content/uploads/2019/06/wp-content/uploads/2019/06/logo-colors.png","contentUrl":"/wp-content/uploads/2019/06/wp-content/uploads/2019/06/logo-colors.png","width":344,"height":200,"caption":"Top Canalizador"},"image":{"@id":"https://topcanalizador.com/#/schema/logo/image/"}}]}</script>
+<script is:inline type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/#webpage","url":"/","name":"Top Canalizador - Canalizador 24h | Desentupimentos | Limpeza de fossas","isPartOf":{"@id":"/#website"},"about":{"@id":"/#organization"},"datePublished":"2018-09-19T13:08:17+00:00","dateModified":"2020-09-13T13:22:32+00:00","description":"Canalizador 24h, desentupimentos | Limpeza de fossas | Canalização. equipa especializada de técnicos disponiveis 24 horas, Zona de lisboa","breadcrumb":{"@id":"/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["/"]}]},{"@type":"BreadcrumbList","@id":"/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Top Canalizador","description":"Serviço de Canalizador ,Serviços em lisboa, loures, odivelas, Desentupimentos e Limpeza de fossas. Conte  equipa especializada de técnicos 24h.","publisher":{"@id":"/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"/#organization","name":"Top Canalizador","url":"/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"/#/schema/logo/image/","url":"/wp-content/uploads/2019/06/logo-colors.png","contentUrl":"/wp-content/uploads/2019/06/logo-colors.png","width":344,"height":200,"caption":"Top Canalizador"},"image":{"@id":"/#/schema/logo/image/"}}]}</script>
 <meta name="google-site-verification" content="rtbUv-MavbOgs0ZRv5kicVuFjgWoai_DGxCXpEoL4GA"/>
 <link rel='dns-prefetch' href='//cdnjs.cloudflare.com'/>
 <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
@@ -57,10 +90,10 @@ var dataLayer=dataLayer||[];</script>
   @font-face { font-family: 'Essential'; src: url('/fonts/Essential.woff') format('woff'), url('/fonts/Essential.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: block; }
   @font-face { font-family: 'Plumber'; src: url('/fonts/Plumber.woff') format('woff'), url('/fonts/Plumber.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: block; }
 </style>
-<link rel="stylesheet" type="text/css" href="https://topcanalizador.com/wp-content/cache/wpfc-minified/8x6hu8y7/24ch5.css" media="all"/>
-<link rel="stylesheet" type="text/css" href="https://topcanalizador.com/wp-content/cache/wpfc-minified/ee6bs9us/24ch5.css" media="all"/>
-<link rel="stylesheet" type="text/css" href="https://topcanalizador.com/wp-content/cache/wpfc-minified/1b62s0w0/24ch5.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="https://topcanalizador.com/wp-content/cache/wpfc-minified/eephyui9/24ch5.css" media="print"/>
+<link rel="stylesheet" type="text/css" href="/wp-content/cache/wpfc-minified/8x6hu8y7/24ch5.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="/wp-content/cache/wpfc-minified/ee6bs9us/24ch5.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="/wp-content/cache/wpfc-minified/1b62s0w0/24ch5.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/wp-content/cache/wpfc-minified/eephyui9/24ch5.css" media="print"/>
 <style is:inline id='bt_bb_content_elements-inline-css'>.bt_bb_color_scheme_1.bt_bb_icon a{color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_icon:hover a{color:#252525;}.bt_bb_color_scheme_1.bt_bb_icon:hover a span{color:#252525;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_outline .bt_bb_icon_holder:before{background-color:transparent;box-shadow:0 0 0 2px #ffffff inset;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_outline:hover .bt_bb_icon_holder:before{background-color:#ffffff;box-shadow:0 0 0 2em #ffffff inset;color:#252525;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_filled .bt_bb_icon_holder:before{box-shadow:0 0 0 2em #252525 inset;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_filled:hover .bt_bb_icon_holder:before{box-shadow:0 0 0 0px #252525 inset;background-color:#ffffff;color:#252525;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_filled:hover a.bt_bb_icon_holder:before{box-shadow:0 0 0 0px #252525 inset;background-color:#ffffff;color:#252525;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_borderless .bt_bb_icon_holder:before{color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_borderless:hover .bt_bb_icon_holder:before{color:#252525;}
 .bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_outline a{box-shadow:0 0 0 2px #ffffff inset;color:#ffffff;background-color:transparent;}.bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_outline a:hover{box-shadow:0 0 0 3em #ffffff inset;color:#252525;}.bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_filled a{box-shadow:none;background-color:#252525;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_filled a:hover{box-shadow:0 2px 5px rgba(0,0,0,.2);background-color:#252525;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_clean a,.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_borderless a{color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_button.bt_bb_style_clean a:hover,.bt_bb_color_scheme_1.bt_bb_icon.bt_bb_style_borderless:hover a{color:#ffffff;}
 .bt_bb_color_scheme_1.bt_bb_style_outline.bt_bb_service .bt_bb_icon_holder{box-shadow:0 0 0 3px #252525 inset;color:#ffffff;background-color:transparent;}.bt_bb_color_scheme_1.bt_bb_style_outline.bt_bb_service:hover .bt_bb_icon_holder{box-shadow:0 0 0 3em #252525 inset;background-color:#252525;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_style_filled.bt_bb_service .bt_bb_icon_holder{box-shadow:0 0 0 3em #252525 inset;color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_style_filled.bt_bb_service:hover .bt_bb_icon_holder{box-shadow:0 0 0 1px #252525 inset;background-color:#ffffff;color:#252525;}.bt_bb_color_scheme_1.bt_bb_style_borderless.bt_bb_service .bt_bb_icon_holder{color:#ffffff;}.bt_bb_color_scheme_1.bt_bb_style_borderless.bt_bb_service:hover .bt_bb_icon_holder{color:#252525;}.bt_bb_color_scheme_1.bt_bb_service .bt_bb_service_content .bt_bb_service_content_text em{color:#ffffff;}
@@ -658,14 +691,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <style is:inline id="wp-custom-css">.gt_white_content{top:300% !important;}
 .gt_black_overlay{display:none !important;}
 .btBreadCrumbs{display:none !important;}</style>
-<script is:inline data-wpfc-render="false">var Wpfcll={s:[],osl:0,scroll:false,i:function(){Wpfcll.ss();window.addEventListener('load',function(){let observer=new MutationObserver(mutationRecords=>{Wpfcll.osl=Wpfcll.s.length;Wpfcll.ss();if(Wpfcll.s.length > Wpfcll.osl){Wpfcll.ls(false);}});observer.observe(document.getElementsByTagName("html")[0],{childList:true,attributes:true,subtree:true,attributeFilter:["src"],attributeOldValue:false,characterDataOldValue:false});Wpfcll.ls(true);});window.addEventListener('scroll',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});window.addEventListener('resize',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});window.addEventListener('click',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});},c:function(e,pageload){var w=document.documentElement.clientHeight || body.clientHeight;var n=0;if(pageload){n=0;}else{n=(w > 800) ? 800:200;n=Wpfcll.scroll ? 800:n;}var er=e.getBoundingClientRect();var t=0;var p=e.parentNode ? e.parentNode:false;if(typeof p.getBoundingClientRect=="undefined"){var pr=false;}else{var pr=p.getBoundingClientRect();}if(er.x==0 && er.y==0){for(var i=0;i < 10;i++){if(p){if(pr.x==0 && pr.y==0){if(p.parentNode){p=p.parentNode;}if(typeof p.getBoundingClientRect=="undefined"){pr=false;}else{pr=p.getBoundingClientRect();}}else{t=pr.top;break;}}};}else{t=er.top;}if(w - t+n > 0){return true;}return false;},r:function(e,pageload){var s=this;var oc,ot;try{oc=e.getAttribute("data-wpfc-original-src");ot=e.getAttribute("data-wpfc-original-srcset");originalsizes=e.getAttribute("data-wpfc-original-sizes");if(s.c(e,pageload)){if(oc || ot){if(e.tagName=="DIV" || e.tagName=="A" || e.tagName=="SPAN"){e.style.backgroundImage="url("+oc+")";e.removeAttribute("data-wpfc-original-src");e.removeAttribute("data-wpfc-original-srcset");e.removeAttribute("onload");}else{if(oc){e.setAttribute('src',oc);}if(ot){e.setAttribute('srcset',ot);}if(originalsizes){e.setAttribute('sizes',originalsizes);}if(e.getAttribute("alt") && e.getAttribute("alt")=="blank"){e.removeAttribute("alt");}e.removeAttribute("data-wpfc-original-src");e.removeAttribute("data-wpfc-original-srcset");e.removeAttribute("data-wpfc-original-sizes");e.removeAttribute("onload");if(e.tagName=="IFRAME"){var y="https://www.youtube.com/embed/";if(navigator.userAgent.match(/\sEdge?\/\d/i)){e.setAttribute('src',e.getAttribute("src").replace(/.+\/templates\/youtube\.html\#/,y));}e.onload=function(){if(typeof window.jQuery !="undefined"){if(jQuery.fn.fitVids){jQuery(e).parent().fitVids({customSelector:"iframe[src]"});}}var s=e.getAttribute("src").match(/templates\/youtube\.html\#(.+)/);if(s){try{var i=e.contentDocument || e.contentWindow;if(i.location.href=="about:blank"){e.setAttribute('src',y+s[1]);}}catch(err){e.setAttribute('src',y+s[1]);}}}}}}else{if(e.tagName=="NOSCRIPT"){if(typeof window.jQuery !="undefined"){if(jQuery(e).attr("data-type")=="wpfc"){e.removeAttribute("data-type");jQuery(e).after(jQuery(e).text());}}}}}}catch(error){console.log(error);console.log("==>",e);}},ss:function(){var i=Array.prototype.slice.call(document.getElementsByTagName("img"));var f=Array.prototype.slice.call(document.getElementsByTagName("iframe"));var d=Array.prototype.slice.call(document.getElementsByTagName("div"));var a=Array.prototype.slice.call(document.getElementsByTagName("a"));var s=Array.prototype.slice.call(document.getElementsByTagName("span"));var n=Array.prototype.slice.call(document.getElementsByTagName("noscript"));this.s=i.concat(f).concat(d).concat(a).concat(s).concat(n);},ls:function(pageload){var s=this;[].forEach.call(s.s,function(e,index){s.r(e,pageload);});}};document.addEventListener('DOMContentLoaded',function(){wpfci();});function wpfci(){Wpfcll.i();}</script>
+<script is:inline data-wpfc-render="false">var Wpfcll={s:[],osl:0,scroll:false,i:function(){Wpfcll.ss();window.addEventListener('load',function(){let observer=new MutationObserver(mutationRecords=>{Wpfcll.osl=Wpfcll.s.length;Wpfcll.ss();if(Wpfcll.s.length > Wpfcll.osl){Wpfcll.ls(false);}});observer.observe(document.getElementsByTagName("html")[0],{childList:true,attributes:true,subtree:true,attributeFilter:["src"],attributeOldValue:false,characterDataOldValue:false});Wpfcll.ls(true);});window.addEventListener('scroll',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});window.addEventListener('resize',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});window.addEventListener('click',function(){Wpfcll.scroll=true;Wpfcll.ls(false);});},c:function(e,pageload){var w=document.documentElement.clientHeight || body.clientHeight;var n=0;if(pageload){n=0;}else{n=(w > 800) ? 800:200;n=Wpfcll.scroll ? 800:n;}var er=e.getBoundingClientRect();var t=0;var p=e.parentNode ? e.parentNode:false;if(typeof p.getBoundingClientRect=="undefined"){var pr=false;}else{var pr=p.getBoundingClientRect();}if(er.x==0 && er.y==0){for(var i=0;i < 10;i++){if(p){if(pr.x==0 && pr.y==0){if(p.parentNode){p=p.parentNode;}if(typeof p.getBoundingClientRect=="undefined"){pr=false;}else{pr=p.getBoundingClientRect();}}else{t=pr.top;break;}}};}else{t=er.top;}if(w - t+n > 0){return true;}return false;},r:function(e,pageload){var s=this;var oc,ot;try{oc=e.getAttribute("data-wpfc-original-src");ot=e.getAttribute("data-wpfc-original-srcset");originalsizes=e.getAttribute("data-wpfc-original-sizes");if(s.c(e,pageload)){if(oc || ot){if(e.tagName=="DIV" || e.tagName=="A" || e.tagName=="SPAN"){e.style.backgroundImage="url("+oc+")";e.removeAttribute("data-wpfc-original-src");e.removeAttribute("data-wpfc-original-srcset");e.removeAttribute("onload");}else{if(oc){e.setAttribute('src',oc);}if(ot){e.setAttribute('srcset',ot);}if(originalsizes){e.setAttribute('sizes',originalsizes);}if(e.getAttribute("alt") && e.getAttribute("alt")=="blank"){e.removeAttribute("alt");}e.removeAttribute("data-wpfc-original-src");e.removeAttribute("data-wpfc-original-srcset");e.removeAttribute("data-wpfc-original-sizes");e.removeAttribute("onload");if(e.tagName=="IFRAME"){var y="https://www.youtube-nocookie.com/embed/";if(navigator.userAgent.match(/\sEdge?\/\d/i)){e.setAttribute('src',e.getAttribute("src").replace(/.+\/templates\/youtube\.html\#/,y));}e.onload=function(){if(typeof window.jQuery !="undefined"){if(jQuery.fn.fitVids){jQuery(e).parent().fitVids({customSelector:"iframe[src]"});}}var s=e.getAttribute("src").match(/templates\/youtube\.html\#(.+)/);if(s){try{var i=e.contentDocument || e.contentWindow;if(i.location.href=="about:blank"){e.setAttribute('src',y+s[1]);}}catch(err){e.setAttribute('src',y+s[1]);}}}}}}else{if(e.tagName=="NOSCRIPT"){if(typeof window.jQuery !="undefined"){if(jQuery(e).attr("data-type")=="wpfc"){e.removeAttribute("data-type");jQuery(e).after(jQuery(e).text());}}}}}}catch(error){console.log(error);console.log("==>",e);}},ss:function(){var i=Array.prototype.slice.call(document.getElementsByTagName("img"));var f=Array.prototype.slice.call(document.getElementsByTagName("iframe"));var d=Array.prototype.slice.call(document.getElementsByTagName("div"));var a=Array.prototype.slice.call(document.getElementsByTagName("a"));var s=Array.prototype.slice.call(document.getElementsByTagName("span"));var n=Array.prototype.slice.call(document.getElementsByTagName("noscript"));this.s=i.concat(f).concat(d).concat(a).concat(s).concat(n);},ls:function(pageload){var s=this;[].forEach.call(s.s,function(e,index){s.r(e,pageload);});}};document.addEventListener('DOMContentLoaded',function(){wpfci();});function wpfci(){Wpfcll.i();}</script>
 
 </head>
-	<body class={bodyClass || "home wp-singular page-template-default page page-id-1379 wp-theme-prohauz bt_bb_plugin_active bt_bb_fe_preview_toggle btHeadingWeight_default btCapitalizeMainMenuItems btHasAltLogo btMenuRightEnabled btStickyEnabled btLightSkin btBelowMenu btNoDashInSidebar noBodyPreloader btSoftRoundedButtons btOpacityLightHeader btNoSidebar"}>
+	<body class={finalBodyClass}>
+    <Header />
+    <div class="btPageWrap" id="top">
 		    <slot />
+    </div>
+    <Footer />
+    <CookieConsent />
     
     <!-- Theme Scripts moved to Layout to work on all pages -->
-    <script is:inline src="//topcanalizador.com/wp-content/cache/wpfc-minified/8vib8b45/24ch5.js"></script>
+    <script is:inline src="/wp-content/cache/wpfc-minified/8vib8b45/24ch5.js"></script>
     <script is:inline>var bt_bb_update_res=function(){
     var width=Math.max(document.documentElement.clientWidth, window.innerWidth||0);
     window.bt_bb_res='xxl';
@@ -713,51 +751,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     document.removeEventListener('readystatechange', bt_bb_cancel_observer);
     }};
     document.addEventListener('readystatechange', bt_bb_cancel_observer);</script>
-    <script is:inline src="//topcanalizador.com/wp-content/cache/wpfc-minified/kx9mvu7e/24ch5.js"></script>
-    <script is:inline src="//topcanalizador.com/wp-content/cache/wpfc-minified/q93pli1y/24ch5.js"></script>
-    <script is:inline src="//topcanalizador.com/wp-content/cache/wpfc-minified/kpshirzm/24ch5.js"></script>
-    <script is:inline src="//topcanalizador.com/wp-content/cache/wpfc-minified/7m97r48g/24ch5.js"></script>
-    <script is:inline defer src="//topcanalizador.com/wp-content/cache/wpfc-minified/fcziox44/24ch5.js"></script>
-    <script is:inline defer src="//topcanalizador.com/wp-content/cache/wpfc-minified/8w09lico/24ch5.js"></script>
-    <script is:inline defer src="//topcanalizador.com/wp-content/cache/wpfc-minified/eh78fs9g/24ch5.js"></script>
+    <script is:inline src="/wp-content/cache/wpfc-minified/kx9mvu7e/24ch5.js"></script>
+    <script is:inline src="/wp-content/cache/wpfc-minified/q93pli1y/24ch5.js"></script>
+    <script is:inline src="/wp-content/cache/wpfc-minified/kpshirzm/24ch5.js"></script>
+    <script is:inline src="/wp-content/cache/wpfc-minified/7m97r48g/24ch5.js"></script>
+    <script is:inline defer src="/wp-content/cache/wpfc-minified/fcziox44/24ch5.js"></script>
+    <script is:inline defer src="/wp-content/cache/wpfc-minified/8w09lico/24ch5.js"></script>
+    <script is:inline defer src="/wp-content/cache/wpfc-minified/eh78fs9g/24ch5.js"></script>
 
-    <a href="https://wa.me/351969146836" class="tc-float-whatsapp" target="_blank" aria-label="Contactar via WhatsApp">
-      <i class="fa fa-whatsapp"></i>
-    </a>
 
-    <style is:inline>
-      .tc-float-whatsapp {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 30px;
-        right: 30px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 32px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        z-index: 9998;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      .tc-float-whatsapp:hover {
-        transform: scale(1.1);
-        background-color: #128c7e;
-        color: #FFF;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-      }
-      /* Ensure it doesn't overlap too much with Cookie Consent on mobile */
-      @media (max-width: 480px) {
-        .tc-float-whatsapp {
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
           font-size: 26px;
         }
       }
@@ -845,6 +847,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       })();
     </script>
 
-	<CookieConsent />
+
 	</body>
 </html>
