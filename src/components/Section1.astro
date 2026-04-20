@@ -1,10 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import desentupimentoImg from '../assets/images/desentupimento-canaliza__ao-lisboa.jpg';
 import canalizadorImg from '../assets/images/background_transparent_01-2.png';
-import desentupimento_canaliza__ao_lisboaImg from '../assets/images/desentupimento-canaliza__ao-lisboa.jpg';
-import background_transparent_01_2Img from '../assets/images/background_transparent_01-2.png';
-import desentupimento_canaliza__ao_lisboaImg_1 from '../assets/images/desentupimento-canaliza__ao-lisboa.jpg';
-import background_transparent_01_2Img_1 from '../assets/images/background_transparent_01-2.png';
 ---
 <section id="bt_bb_section69e3d260324e6" class="bt_bb_section bt_bb_color_scheme_1 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_small" style="; --section-primary-color:#ffffff; --section-secondary-color:#252525;" data-bt-override-class="null">
   <div class="bt_bb_background_image_holder_wrapper">
@@ -45,7 +42,17 @@ import background_transparent_01_2Img_1 from '../assets/images/background_transp
               <div class="bt_bb_column_content">
                 <div class="bt_bb_column_content_inner">
                   <div class="bt_bb_image bt_bb_target_self bt_bb_align_inherit bt_bb_hover_style_simple bt_bb_content_display_always bt_bb_content_align_middle bt_bb_inner_padding_" style="margin-top: -30px;" data-bt-override-class="{}">
-                    <span><img src={canalizadorImg.src} alt="Canalizador Profissional" style="max-width: 100%; height: auto; margin: 0 auto; display: block; position: relative; bottom: 0;"></span>
+                    <span>
+                      <Image 
+                        src={canalizadorImg} 
+                        alt="Canalizador Profissional" 
+                        width={400} 
+                        height={560}
+                        loading="eager"
+                        fetchpriority="high"
+                        style="max-width: 100%; height: auto; margin: 0 auto; display: block; position: relative; bottom: 0;"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>

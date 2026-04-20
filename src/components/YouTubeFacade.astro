@@ -1,0 +1,98 @@
+---
+interface Props {
+  videoId: string;
+  title: string;
+}
+
+const { videoId, title } = Astro.props;
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+---
+
+<div class="youtube-facade" data-video-id={videoId}>
+  <div class="thumbnail-wrapper">
+    <img src={thumbnailUrl} alt={title} loading="lazy" />
+    <button class="play-button" aria-label="Play Video">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function initYouTubeFacades() {
+    const facades = document.querySelectorAll('.youtube-facade');
+    facades.forEach(facade => {
+      facade.addEventListener('click', () => {
+        const videoId = facade.getAttribute('data-video-id');
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`);
+        iframe.setAttribute('title', 'YouTube video player');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', 'true');
+        
+        const container = facade.parentElement;
+        facade.remove();
+        container.appendChild(iframe);
+      });
+    });
+  }
+
+  // Run on initial load
+  initYouTubeFacades();
+  // Support Astro view transitions if used
+  document.addEventListener('astro:page-load', initYouTubeFacades);
+</script>
+
+<style>
+  .youtube-facade {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background-color: #000;
+  }
+  .thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+  }
+  .thumbnail-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .youtube-facade:hover img {
+    opacity: 1;
+  }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    background-color: rgba(255, 0, 0, 0.9);
+    border: none;
+    border-radius: 12%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  .play-button svg {
+    width: 32px;
+    height: 32px;
+  }
+  .youtube-facade:hover .play-button {
+    background-color: #f00;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 // Section 9 - Seamless Marquee Brands Bar
+import { Image } from 'astro:assets';
 
 import tangit_logoImg from '../assets/images/tangit-logo.png';
 import conexbanningerImg from '../assets/images/conexbanninger.png';
@@ -7,18 +8,6 @@ import heliromaImg from '../assets/images/heliroma.png';
 import remsImg from '../assets/images/rems.png';
 import ridgidImg from '../assets/images/ridgid.png';
 import rothenbergerImg from '../assets/images/rothenberger.png';
-import tangit_logoImg_1 from '../assets/images/tangit-logo.png';
-import conexbanningerImg_1 from '../assets/images/conexbanninger.png';
-import heliromaImg_1 from '../assets/images/heliroma.png';
-import remsImg_1 from '../assets/images/rems.png';
-import ridgidImg_1 from '../assets/images/ridgid.png';
-import rothenbergerImg_1 from '../assets/images/rothenberger.png';
-import tangit_logoImg_2 from '../assets/images/tangit-logo.png';
-import conexbanningerImg_2 from '../assets/images/conexbanninger.png';
-import heliromaImg_2 from '../assets/images/heliroma.png';
-import remsImg_2 from '../assets/images/rems.png';
-import ridgidImg_2 from '../assets/images/ridgid.png';
-import rothenbergerImg_2 from '../assets/images/rothenberger.png';
 ---
 <style>
   .brands-section-wrapper {
@@ -152,20 +141,20 @@ import rothenbergerImg_2 from '../assets/images/rothenberger.png';
       <div class="marquee-wrapper">
         <div class="marquee-track">
           <!-- ORIGINAL SET -->
-          <img src={tangit_logoImg.src} alt="Tangit" />
-          <img src={conexbanningerImg.src} alt="Conex Banninger" />
-          <img src={heliromaImg.src} alt="Heliroma" />
-          <img src={remsImg.src} alt="REMS" />
-          <img src={ridgidImg.src} alt="RIDGID" />
-          <img src={rothenbergerImg.src} alt="Rothenberger" />
+          <Image src={tangit_logoImg} alt="Tangit" width={88} height={70} />
+          <Image src={conexbanningerImg} alt="Conex Banninger" width={88} height={70} />
+          <Image src={heliromaImg} alt="Heliroma" width={88} height={70} />
+          <Image src={remsImg} alt="REMS" width={88} height={70} />
+          <Image src={ridgidImg} alt="RIDGID" width={88} height={70} />
+          <Image src={rothenbergerImg} alt="Rothenberger" width={88} height={70} />
           
           <!-- DUPLICATED SET (Required to create the infinite seamless loop effect) -->
-          <img src={tangit_logoImg.src} alt="Tangit" />
-          <img src={conexbanningerImg.src} alt="Conex Banninger" />
-          <img src={heliromaImg.src} alt="Heliroma" />
-          <img src={remsImg.src} alt="REMS" />
-          <img src={ridgidImg.src} alt="RIDGID" />
-          <img src={rothenbergerImg.src} alt="Rothenberger" />
+          <Image src={tangit_logoImg} alt="Tangit" width={88} height={70} />
+          <Image src={conexbanningerImg} alt="Conex Banninger" width={88} height={70} />
+          <Image src={heliromaImg} alt="Heliroma" width={88} height={70} />
+          <Image src={remsImg} alt="REMS" width={88} height={70} />
+          <Image src={ridgidImg} alt="RIDGID" width={88} height={70} />
+          <Image src={rothenbergerImg} alt="Rothenberger" width={88} height={70} />
         </div>
       </div>
     </div>
