@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+// Contactos - Using the Unified Global Header
+---
+
+<Layout title="Contactos - Top Canalizador">
+  <Header />
+
+  <main class="tc-contact-page">
+    
+    <!-- Hero Banner Wrapper -->
+    <section class="tc-hero">
+      <div class="tc-hero-overlay"></div>
+      <div class="port">
+        <div class="tc-hero-content">
+            <h1 class="tc-title">Contacte-nos</h1>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="tc-content">
+      <div class="port">
+        <div class="tc-flex-grid centered-layout">
+          
+          <!-- INFO COLUMN (Now centered and compact) -->
+          <div class="tc-col-right">
+             <h2 class="tc-section-title">O Nosso <span class="tc-blue">Suporte</span></h2>
+             <p class="tc-intro-p">Serviços comerciais e particulares de canalizações, desentupimentos e limpezas de qualquer tipo. Estamos aqui para ajudar 24h por dia!</p>
+             
+             <div class="tc-info-card">
+                <span class="tc-small-label">TELEFONE A QUALQUER HORA... SEJA DIA OU NOITE</span>
+                <div class="tc-phone-display">
+                    <div class="tc-phone-circle">
+                         <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                    </div>
+                    <span class="tc-phone-big">969 146 836</span>
+                </div>
+
+                <!-- WHATSAPP BUTTON -->
+                <div class="tc-whatsapp-wrap">
+                    <a href="https://wa.me/351969146836" target="_blank" class="tc-btn-whatsapp">
+                        <i class="fa fa-whatsapp"></i> FALE CONNOSCO NO WHATSAPP
+                    </a>
+                </div>
+                
+                <div class="tc-quote-box">
+                    "Cortesia pode não ser a primeira coisa que as pessoas pensam quando se trata de encanamento, mas para nós, é uma das ferramentas mais importantes que levamos."
+                </div>
+
+                <div class="tc-links-list">
+                    <div class="tc-link-row">
+                        <span class="tc-icon-blue">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </span>
+                        <div class="tc-link-content">Rua Silva Pedro, lote 59, Moinho do Baeta 1685-467 Loures</div>
+                    </div>
+                    <div class="tc-link-row">
+                        <span class="tc-icon-blue">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </span>
+                        <div class="tc-link-content">
+                            Geral@topcanalizador.com<br/>
+                            Suporte@topcanalizador.com
+                        </div>
+                    </div>
+                </div>
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieConsent />
+</Layout>
+
+<style is:global>
+  /* Base for the Page */
+  .tc-contact-page {
+    background: #fff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #252525 !important;
+  }
+
+  .port {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  /* Hero Section */
+  .tc-hero {
+    position: relative;
+    padding: 140px 0 60px; /* Reduced padding */
+    text-align: center; /* Centered */
+    background-color: #0c1c2c;
+    overflow: hidden;
+  }
+
+  .tc-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .tc-hero-content {
+      position: relative;
+      z-index: 10;
+  }
+
+  .tc-title {
+    color: #fff !important;
+    font-size: 82px !important;
+    font-weight: 800 !important;
+    margin: 0 0 10px 0 !important;
+    letter-spacing: -3px !important;
+    line-height: 1 !important;
+  }
+
+  .tc-breadcrumbs {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 700;
+  }
+
+  .tc-breadcrumbs .active { color: #51acfb; }
+
+  /* Content Region */
+  .tc-content {
+    padding: 60px 0; /* Reduced padding */
+  }
+
+  .centered-layout {
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tc-flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .tc-col-right { flex: 1; min-width: 300px; text-align: center; } /* Centered Column */
+
+  .tc-section-title {
+    font-size: 42px !important; /* Slightly smaller */
+    font-weight: 800 !important;
+    margin: 0 0 10px 0 !important;
+    letter-spacing: -2px !important;
+    color: #222 !important;
+  }
+
+  .tc-blue { color: #51acfb !important; }
+
+  .tc-sub-text { font-size: 18px; color: #555; margin-bottom: 50px; font-weight: 500; }
+
+  .tc-intro-p { font-size: 18px; line-height: 1.5; color: #333; margin-bottom: 30px; font-weight: 400; }
+
+  /* WhatsApp Button */
+  .tc-whatsapp-wrap {
+    margin-bottom: 40px;
+  }
+
+  .tc-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 40px;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  }
+
+  .tc-btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-3px);
+  }
+
+  .tc-btn-whatsapp i {
+    font-size: 24px;
+  }
+
+  /* Info Area */
+  .tc-small-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #51acfb;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .tc-phone-display { display: flex; align-items: center; justify-content: center; gap: 25px; margin-bottom: 40px; }
+
+  .tc-phone-circle {
+    width: 65px; height: 65px; background: #51acfb; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .tc-phone-big {
+    font-size: 54px !important; font-weight: 800 !important; color: #111 !important; letter-spacing: -2.5px !important;
+  }
+
+  .tc-quote-box {
+    border-left: 0; border-top: 4px solid #eee; padding: 20px 0 0; font-style: italic; color: #666; margin-bottom: 50px; line-height: 1.7;
+  }
+
+  .tc-links-list { display: flex; flex-direction: column; gap: 30px; }
+  .tc-link-row { display: flex; gap: 15px; align-items: flex-start; }
+  .tc-icon-blue { font-size: 20px; }
+  .tc-link-content { font-size: 15px; color: #444; font-weight: 700; line-height: 1.5; }
+
+  @media (max-width: 991px) {
+    .tc-flex-grid { flex-direction: column; gap: 60px; }
+    .tc-title { font-size: 48px !important; }
+    .tc-phone-big { font-size: 38px !important; }
+    .tc-input-row { flex-direction: column; gap: 30px; }
+  }
+</style>

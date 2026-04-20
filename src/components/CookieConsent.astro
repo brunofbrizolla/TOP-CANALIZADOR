@@ -1,0 +1,178 @@
+---
+// Premium Cookie Consent Component (Vanilla CSS - Guaranteed Floating)
+---
+
+<div id="tc-cookie-consent" class="tc-cookie-wrapper">
+    <div class="tc-cookie-card">
+        <div class="tc-cookie-header">
+            <div class="tc-cookie-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Sua Privacidade</h3>
+        </div>
+        <div class="tc-cookie-body">
+            <p>Utilizamos cookies para melhorar sua experiência. Ao continuar, aceita nossa <a href="/politica-de-privacidade-politica-de-cookies/">Política de Cookies</a>.</p>
+        </div>
+        <div class="tc-cookie-actions">
+            <button id="tc-accept" class="tc-btn tc-btn-primary">ACEITAR</button>
+            <button id="tc-reject" class="tc-btn tc-btn-flat">RECUSAR</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tc-cookie-wrapper {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999999;
+        max-width: 380px;
+        width: calc(100% - 60px);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        pointer-events: none;
+    }
+
+    .tc-cookie-wrapper.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    .tc-cookie-wrapper.hidden {
+        display: none;
+    }
+
+    .tc-cookie-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .tc-cookie-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .tc-cookie-icon {
+        background: rgba(81, 172, 251, 0.1);
+        color: #51acfb;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .tc-cookie-header h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+
+    .tc-cookie-body p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666666;
+    }
+
+    .tc-cookie-body a {
+        color: #51acfb;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .tc-cookie-body a:hover {
+        text-decoration: underline;
+    }
+
+    .tc-cookie-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+    }
+
+    .tc-btn {
+        flex: 1;
+        border: none;
+        padding: 12px;
+        border-radius: 14px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tc-btn-primary {
+        background: #51acfb;
+        color: #ffffff;
+    }
+
+    .tc-btn-primary:hover {
+        background: #3b9bec;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(81, 172, 251, 0.3);
+    }
+
+    .tc-btn-flat {
+        background: #f5f7f9;
+        color: #888888;
+    }
+
+    .tc-btn-flat:hover {
+        background: #eef1f4;
+        color: #444444;
+    }
+
+    @media (max-width: 480px) {
+        .tc-cookie-wrapper {
+            bottom: 20px;
+            right: 20px;
+            left: 20px;
+            width: auto;
+            max-width: none;
+        }
+    }
+</style>
+
+<script is:inline>
+    (function() {
+        const STORAGE_KEY = 'tc_consent_v2';
+        const wrapper = document.getElementById('tc-cookie-consent');
+        const acceptBtn = document.getElementById('tc-accept');
+        const rejectBtn = document.getElementById('tc-reject');
+
+        console.log("CookieConsent Script Running...");
+        if (localStorage.getItem(STORAGE_KEY)) {
+            console.log("Consent already found:", localStorage.getItem(STORAGE_KEY));
+            wrapper.style.display = 'none';
+        } else {
+            console.log("No consent found, showing banner");
+            wrapper.classList.add('active');
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem(STORAGE_KEY, 'accepted');
+            wrapper.classList.remove('active');
+            setTimeout(() => wrapper.classList.add('hidden'), 600);
+        });
+
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem(STORAGE_KEY, 'rejected');
+            wrapper.classList.remove('active');
+            setTimeout(() => wrapper.classList.add('hidden'), 600);
+        });
+    })();
+</script>

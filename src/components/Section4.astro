@@ -1,0 +1,182 @@
+---
+// Extracted and Fixed Section
+---
+<style is:global>
+  /* Desktop: Blue Banner side by side */
+  @media (min-width: 992px) {
+    .tc-banner-mobile {
+      display: none !important;
+    }
+
+    #bt_bb_section69e3d26038229 {
+      background-color: #51acfb !important;
+      padding: 15px 0 !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_port {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      width: 100% !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_row_holder {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_column[data-width="8"] {
+      flex: 1 !important;
+      max-width: fit-content !important;
+      text-align: left !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_headline_content span {
+      color: #ffffff !important;
+      font-size: 32px !important;
+      font-weight: 300 !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_column[data-width="4"] {
+      flex: 0 0 auto !important;
+      max-width: fit-content !important;
+    }
+
+    #bt_bb_section69e3d26038229 .bt_bb_button .bt_bb_link {
+      background-color: #ffffff !important;
+      color: #252525 !important;
+      padding: 15px 30px !important;
+      border-radius: 3px !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+    }
+  }
+
+  /* Mobile clean banner base styles */
+  .tc-banner-mobile {
+    background-color: #51acfb;
+    padding: 40px 24px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tc-banner-mobile-text {
+    font-size: 26px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0 0 28px 0;
+  }
+
+  .tc-banner-mobile-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #252525;
+    padding: 16px 32px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+</style>
+
+<!-- MOBILE: Clean blue banner -->
+<div class="tc-banner-mobile" id="tc-banner-mobile-div">
+  <p class="tc-banner-mobile-text">Está interessado em obter um orçamento?</p>
+  <a href="tel:+351969146836" class="tc-banner-mobile-btn">PEÇA JÁ O SEU ORÇAMENTO</a>
+</div>
+
+<section id="bt_bb_section69e3d26038229" class="bt_bb_section bt_bb_color_scheme_6 bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_top_spacing_normal bt_bb_bottom_spacing_normal" style="; --section-primary-color:#ffffff; --section-secondary-color:#51acfb;" data-bt-override-class="null">
+  <div class="bt_bb_port">
+    <div class="bt_bb_cell">
+      <div class="bt_bb_cell_inner">
+        <div class="bt_bb_row" data-bt-override-class="{}">
+          <div class="bt_bb_row_holder">
+            <div class="bt_bb_column col-xxl-8 col-xl-8 bt_bb_vertical_align_middle bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate" style="; --column-width:8;" data-width="8" data-bt-override-class="{}">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <header class="bt_bb_headline bt_bb_font_weight_normal bt_bb_dash_none bt_bb_size_large bt_bb_align_inherit" data-bt-override-class="null">
+                    <h3>
+                      <span class="bt_bb_headline_content">
+                        <span>Está interessado em obter um orçamento?</span>
+                      </span>
+                    </h3>
+                  </header>
+                </div>
+              </div>
+            </div>
+            <div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_middle bt_bb_align_right bt_bb_padding_normal bt_bb_animation_fade_in animate" style="; --column-width:4;" data-width="4" data-bt-override-class="{}">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_button bt_bb_color_scheme_2 bt_bb_style_filled bt_bb_size_normal bt_bb_width_inline bt_bb_shape_inherit bt_bb_target_self bt_bb_align_inherit" style="margin:0;; --primary-color:#252525; --secondary-color:#ffffff;">
+                    <a href="tel:+351969146836" target="_self" class="bt_bb_link" title="PEÇA JÁ O SEU ORÇAMENTO">
+                      <span class="bt_bb_button_text">PEÇA JÁ O SEU ORÇAMENTO</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  function applyMobileBannerLayout() {
+    var isMobile = window.innerWidth <= 991;
+    var wpSection = document.getElementById('bt_bb_section69e3d26038229');
+    var mobileBanner = document.getElementById('tc-banner-mobile-div');
+
+    if (!wpSection || !mobileBanner) return;
+
+    if (isMobile) {
+      // Force hide the WP version
+      wpSection.style.setProperty('display', 'none', 'important');
+      wpSection.setAttribute('aria-hidden', 'true');
+
+      // Force show our clean mobile version with correct styles
+      mobileBanner.style.display = 'flex';
+      mobileBanner.style.flexDirection = 'column';
+      mobileBanner.style.alignItems = 'center';
+      mobileBanner.style.justifyContent = 'center';
+      mobileBanner.style.backgroundColor = '#51acfb';
+      mobileBanner.style.padding = '40px 24px';
+      mobileBanner.style.textAlign = 'center';
+      mobileBanner.style.width = '100%';
+      mobileBanner.style.boxSizing = 'border-box';
+    } else {
+      // Desktop: show WP version, hide mobile
+      wpSection.style.removeProperty('display');
+      mobileBanner.style.display = 'none';
+    }
+  }
+
+  // Run immediately
+  applyMobileBannerLayout();
+
+  // Run after DOM ready
+  document.addEventListener('DOMContentLoaded', applyMobileBannerLayout);
+
+  // Run after everything loads (WP scripts included)
+  window.addEventListener('load', applyMobileBannerLayout);
+
+  // Keep checking for 3 seconds in case WP scripts re-enable the section
+  var checks = 0;
+  var interval = setInterval(function() {
+    applyMobileBannerLayout();
+    checks++;
+    if (checks >= 10) clearInterval(interval);
+  }, 300);
+
+  window.addEventListener('resize', applyMobileBannerLayout);
+})();
+</script>

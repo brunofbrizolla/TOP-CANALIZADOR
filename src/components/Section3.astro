@@ -1,0 +1,77 @@
+---
+// Extracted and Fixed Section
+---
+<style>
+  /* Native Astro Slider implementation */
+  .native-fade-slider {
+    display: grid !important;
+  }
+  .native-fade-slider > .bt_bb_content_slider_item {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .native-fade-slider > .bt_bb_content_slider_item.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto;
+    z-index: 2;
+  }
+</style>
+<script is:inline>
+  function initSection3Slider() {
+    const sliders = document.querySelectorAll('.native-fade-slider');
+    console.log('Initializing Section 3 Sliders (Native):', sliders.length);
+    
+    sliders.forEach((slider) => {
+      // Clear existing interval if any
+      if (slider.dataset.sliderInterval) {
+        clearInterval(parseInt(slider.dataset.sliderInterval));
+      }
+      
+      const items = Array.from(slider.querySelectorAll('.bt_bb_content_slider_item'));
+      if (items.length > 0) {
+        let current = 0;
+        
+        // Setup initial state
+        items.forEach((item, idx) => {
+          item.classList.toggle('active', idx === 0);
+          item.style.display = 'block';
+        });
+        
+        const intervalId = setInterval(() => {
+          items[current].classList.remove('active');
+          current = (current + 1) % items.length;
+          items[current].classList.add('active');
+        }, 5000); // 5 seconds to match original feel
+        
+        slider.dataset.sliderInterval = intervalId.toString();
+      }
+    });
+  }
+
+  // Handle all lifecycle cases
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSection3Slider);
+  } else {
+    initSection3Slider();
+  }
+  
+  document.addEventListener('astro:page-load', initSection3Slider);
+  document.addEventListener('astro:after-swap', initSection3Slider);
+</script>
+<section id="bt_bb_section69e3d26035648" class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_bottom_spacing_medium" data-bt-override-class="null"><div class="bt_bb_port"><div class="bt_bb_cell"><div class="bt_bb_cell_inner"><div class="bt_bb_row" data-bt-override-class="{}"><div class="bt_bb_row_holder"><div class="bt_bb_column col-xxl-12 col-xl-12 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal" style="; --column-width:12;" data-width="12" data-bt-override-class="{}"><div class="bt_bb_column_content"><div class="bt_bb_column_content_inner"><div class="bt_bb_content_slider bt_bb_gap_normal bt_bb_arrows_size_normal bt_bb_arrows_position_no_arrows bt_bb_arrows_style_filled bt_bb_show_dots_bottom bt_bb_height_keep-height bt_bb_animation_fade bt_bb_color_scheme_6" style="; --content-slider-primary-color:#ffffff; --content-slider-secondary-color:#51acfb;"><div class="native-fade-slider">
+
+<!-- SLIDE 1 (PROBLEMAS URGENTES) -->
+<div class="bt_bb_content_slider_item"><div class="bt_bb_content_slider_item_content content"><div class="bt_bb_row_inner bt_bb_column_inner_gap_40" data-bt-override-class="{}"><div class="bt_bb_row_inner_holder"><div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_vertical_align_middle bt_bb_align_left bt_bb_padding_normal" data-width="12" data-bt-override-class="{}"><div class="bt_bb_column_inner_content"><div class="bt_bb_column_inner_content_inner"><header class="bt_bb_headline bt_bb_dash_none bt_bb_superheadline bt_bb_size_large bt_bb_align_inherit" data-bt-override-class="null"><h3><span class="bt_bb_headline_superheadline">O QUE NÓS OFERECEMOS</span><span class="bt_bb_headline_content"><span><b> PROBLEMAS </b> ? Necessita Soluções <b> URGENTES </b> ?</span></span></h3></header><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-tools="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">Diagnósticos Exatos</div><div class="bt_bb_service_content_text">Não desperdice mais tempo e dinheiro em tentativas falhadas, porque nós realizamos diagnósticos exatos, pode contar com os melhores canalizadores e equipamento de topo, conseguimos detectar qualquer problema com precisão.</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-essential="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">Estamos localizados em varios pontos do País</div><div class="bt_bb_service_content_text">Fazemos todo o tipo de serviços relacionados com Canalização, Desentupimentos, e Reparações. Contacte-nos já e obtenha mais informações!</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div></div></div></div></div></div></div></div>
+
+<!-- SLIDE 2 (AJUDA) -->
+<div class="bt_bb_content_slider_item"><div class="bt_bb_content_slider_item_content content"><div class="bt_bb_row_inner bt_bb_column_inner_gap_40" data-bt-override-class="{}"><div class="bt_bb_row_inner_holder"><div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_vertical_align_middle bt_bb_align_left bt_bb_padding_normal" data-width="12" data-bt-override-class="{}"><div class="bt_bb_column_inner_content"><div class="bt_bb_column_inner_content_inner"><header class="bt_bb_headline bt_bb_dash_none bt_bb_superheadline bt_bb_size_large bt_bb_align_inherit" data-bt-override-class="null"><h3><span class="bt_bb_headline_superheadline">O QUE NÓS OFERECEMOS</span><span class="bt_bb_headline_content"><span>Necessita ajuda? <b>Não procure mais!</b></span></span></h3></header><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-plumber="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">FUGA NO VASO SANITÁRIO</div><div class="bt_bb_service_content_text">Quando a água vaza por baixo da sanita, o problema é possivelmente o anel de vedação. Embora o pé do vaso precise estar preenchido com massa para assentar, também precisa estar bem vedado para evitar a passagem de líquidos e odores desagradáveis.</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-plumber="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">BANHEIRAS / BASES DE DUCHE E JACUZZIS</div><div class="bt_bb_service_content_text">Necessita de quem faça a instalação da sua banheira simples, de hidromassagem, ou até mesmo da sua base de duche? Ou está a pensar em ter o seu próprio spa com Jacuzzi? Conte connosco!</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div></div></div></div></div></div></div></div>
+
+<!-- SLIDE 3 (SERVIÇOS) -->
+<div class="bt_bb_content_slider_item"><div class="bt_bb_content_slider_item_content content"><div class="bt_bb_row_inner bt_bb_column_inner_gap_40" data-bt-override-class="{}"><div class="bt_bb_row_inner_holder"><div class="bt_bb_column_inner col-xxl-12 col-xl-12 bt_bb_vertical_align_middle bt_bb_align_left bt_bb_padding_normal" data-width="12" data-bt-override-class="{}"><div class="bt_bb_column_inner_content"><div class="bt_bb_column_inner_content_inner"><header class="bt_bb_headline bt_bb_dash_none bt_bb_superheadline bt_bb_size_large bt_bb_align_inherit" data-bt-override-class="null"><h3><span class="bt_bb_headline_superheadline">O QUE NÓS OFERECEMOS</span><span class="bt_bb_headline_content"><span>Explore os nossos <b>Serviços &amp; Soluções</b></span></span></h3></header><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-tools="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">FUGA NOS TUBOS</div><div class="bt_bb_service_content_text">Os canos com fugas de água são um problema importante a ser corrigido, pois quando deixado por muito tempo, esse vazamento ou gotejamento pode criar uma confusão dispendiosa, assim como potenciais riscos à estrutura do imóvel.</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal" data-bt-override-class="null"></div><div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_large bt_bb_shape_circle bt_bb_align_inherit bt_bb_title_size_default" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;" data-bt-override-class="null"><span data-ico-tools="" class="bt_bb_icon_holder"></span><div class="bt_bb_service_content"><div class="bt_bb_service_content_title">Limpeza &amp; Desentupimento do Esgoto</div><div class="bt_bb_service_content_text">Se a sua banheira ou pia está drenando mais devagar que o normal, ou não drena de todo, o seu esgoto possivelmente estará entupido ou danificado. Existem várias formas de desentupir o seu encanamento dependendo do problema.</div></div></div><div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium" data-bt-override-class="null"></div></div></div></div></div></div></div></div>
+
+</div></div></div></div></div></div></div></div></div></section>

@@ -1,0 +1,214 @@
+---
+// WhoWeAre.astro - Premium "Quem Somos" Section
+---
+
+<section id="quem-somos" class="who-we-are">
+  <div class="container">
+    <div class="grid-layout">
+      <!-- Left Column: Content -->
+      <div class="content-side">
+        <span class="super-headline">CONHEÇA A NOSSA HISTÓRIA</span>
+        <h2 class="main-title">Canalizadores de <span>Confiança</span> Perto de si.</h2>
+        <p class="history-text">
+          Os nossos canalizadores são dos profissionais mais reconhecidos no mercado Português, porque estamos comprometidos com um serviço fabuloso à mais de 15 anos, oferecendo serviços de canalização, desentupimentos e limpezas de fossas, a um custo acessível (low cost) a qualquer um. 
+        </p>
+        <p class="history-text">
+          Trabalhamos com qualquer tipo de cliente, desde particulares, comerciais ou até mesmo industriais. Na Top Canalizadores trabalhamos para superar as suas expectativas todos os dias!
+        </p>
+        <div class="cta-area">
+          <p class="cta-msg">Ligue 24/7 para o nosso serviço de emergência!</p>
+          <a href="tel:+351969146836" class="btn-primary">PEÇA JÁ O SEU ORÇAMENTO</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Image & Feature -->
+      <div class="image-side">
+        <div class="image-wrapper" style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); height: 100%;">
+          <img src="/images/hero-desentupimentos.png" alt="Profissionais Top Canalizador" style="width: 100%; height: 100%; min-height: 400px; object-fit: cover; display: block;" />
+          <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(12, 28, 44, 0.95), transparent); padding: 40px 30px 30px;">
+            <h3 style="margin: 0 0 5px 0; font-size: 24px; font-weight: 700; color: #51acfb;">Sempre Prontos a Ajudar</h3>
+            <p style="margin: 0; font-size: 15px; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">Piquete de intervenção rápida 24H em toda a região.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</section>
+
+<style>
+  .who-we-are {
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #252525;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .super-headline {
+    color: #51acfb;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .main-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #0c1c2c;
+  }
+
+  .main-title span {
+    color: #51acfb;
+  }
+
+  .history-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .cta-area {
+    margin-top: 40px;
+    padding: 30px;
+    background: #ffffff;
+    border-left: 5px solid #51acfb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .cta-msg {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #0c1c2c;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: #ef4c37;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 76, 55, 0.3);
+  }
+
+  .btn-primary:hover {
+    background-color: #d84432;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 76, 55, 0.4);
+  }
+
+  .info-card {
+    background: #0c1c2c;
+    color: #fff;
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+
+  .card-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #51acfb;
+  }
+
+  .card-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 35px;
+  }
+
+  .progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .progress-bg {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #51acfb, #2d94ee);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+  }
+
+  .bottom-features {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .feature-tag {
+    font-weight: 600;
+    font-size: 14px;
+    color: #0c1c2c;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  @media (max-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    .who-we-are {
+      padding: 70px 20px;
+    }
+    .main-title {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bottom-features {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

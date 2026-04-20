@@ -1,0 +1,509 @@
+---
+// Extracted and Fixed Section
+---
+<style is:global>
+  /* === OFERTA ESPECIAL BOXES FIX === */
+  
+  /* Make only the first row float up to overlap Section 5 */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) {
+    margin-top: -150px !important; /* Perfect 150px overlap */
+    position: relative;
+    z-index: 50;
+    margin-bottom: 20px !important;
+  }
+
+  /* Force exactly 3 columns side-by-side with no wrap and no gap - DESKTOP ONLY */
+  @media (min-width: 992px) {
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_row_holder {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      width: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Each box - desktop 3 columns */
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_column[data-width="4"] {
+      flex: 1 1 33.333333% !important;
+      max-width: 33.333333% !important;
+      aspect-ratio: 1 / 1 !important;
+      min-height: unset !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* MOBILE: Stack cards one below the other */
+  @media (max-width: 991px) {
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_row_holder {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-wrap: wrap !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_column[data-width="4"] {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      aspect-ratio: unset !important;
+      min-height: 280px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* Box content container */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_column_content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Inner content paddings */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_column_content_inner {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px !important; /* Space inside the box */
+    min-height: unset !important;
+  }
+
+  /* Fixed alignment for LIGUE JA buttons inside boxes */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_button {
+    margin-top: auto !important;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Kill the enormous padding pushing the button up from the bottom of the picture */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_separator.bt_bb_bottom_spacing_large {
+    display: none !important;
+  }
+
+  /* === EMPTY STATS ROW FIX === */
+  /* Hide the useless empty row that was creating a massive invisible gap */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(2) {
+    display: none !important;
+  }
+
+  /* === ROW 3: O QUE NÓS OFERECEMOS (24/7) === */
+
+  /* Row 3 layout */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) {
+    margin-top: 120px !important; /* Match the exact breathing room seen in the original website screenshot */
+    margin-bottom: 60px !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_row_holder {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important; /* Ensure the Headline and Services align at the top uniformly */
+    margin: 0 !important;
+  }
+
+  /* Drop trailing separators pushing vertical layouts */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_separator {
+    display: none !important;
+  }
+
+  /* Target the Headline Block */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_headline_superheadline {
+    display: block !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #666 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 20px !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_headline_content {
+    display: block !important;
+    font-size: 42px !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    color: #252525 !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_headline_content b {
+    color: #51acfb !important; /* The 24/7 is blue */
+  }
+
+  /* The 4 Services Grid setup */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_service {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 25px !important; /* Space between icon and text */
+    margin-bottom: 40px !important;
+    height: 180px !important; /* FORCES absolute equal column heights to align the bottom services perfectly, ignoring wrapping text heights */
+  }
+
+  /* Overriding WP circle icons to be simple outline icons like the reference */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_icon_holder {
+    background: transparent !important;
+    color: #51acfb !important;
+    font-size: 44px !important; /* Nice large icon */
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    border: none !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_icon_holder::before {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Service Text Content */
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_service_content {
+    display: block !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_service_content_title {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    color: #252525 !important;
+    margin-bottom: 15px !important;
+    text-transform: uppercase !important;
+    line-height: 1.4 !important;
+  }
+
+  #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_service_content_text {
+    font-size: 14px !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Responsive Fixes Section 6 */
+  @media (max-width: 991px) {
+    /* 1. Stack the special offers squares */
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) {
+        margin-top: -80px !important; /* Smaller overlap on mobile */
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_row_holder {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(1) .bt_bb_column[data-width="4"] {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: unset !important;
+        min-height: 350px !important;
+    }
+
+    /* 2. Fix the 24/7 services grid on mobile */
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_column {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 0px !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_headline_content {
+        font-size: 32px !important;
+        text-align: center !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_headline_superheadline {
+        text-align: center !important;
+        margin-top: 0 !important;
+    }
+
+    #bt_bb_section69e3d26039b28 > .bt_bb_port > .bt_bb_cell > .bt_bb_cell_inner > .bt_bb_row:nth-child(3) .bt_bb_service {
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+  }
+
+  /* === MOBILE OFERTA ESPECIAL: Hide WP version, show clean version === */
+  @media (max-width: 991px) {
+    /* Hide the original WP row with the 3 cards */
+    .tc-oferta-wp-row {
+      display: none !important;
+    }
+
+    /* Mobile clean version */
+    .tc-oferta-mobile {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      margin-top: -80px !important;
+      position: relative;
+      z-index: 50;
+      gap: 0 !important;
+    }
+
+    .tc-oferta-mobile-card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      width: 100% !important;
+      min-height: 280px !important;
+      background-size: cover !important;
+      background-position: center !important;
+      padding: 30px 25px !important;
+      box-sizing: border-box !important;
+      position: relative;
+    }
+
+    .tc-oferta-mobile-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 70%);
+    }
+
+    .tc-oferta-mobile-card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tc-oferta-mobile-label {
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      color: #51acfb !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      display: block !important;
+      margin-bottom: 8px !important;
+    }
+
+    .tc-oferta-mobile-title {
+      font-size: 28px !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin: 0 0 20px 0 !important;
+    }
+
+    .tc-oferta-mobile-title b {
+      color: #51acfb !important;
+    }
+
+    .tc-oferta-mobile-btn {
+      display: inline-block !important;
+      background: #ef4c37 !important;
+      color: #ffffff !important;
+      padding: 12px 28px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      letter-spacing: 1px !important;
+      border-radius: 3px !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .tc-oferta-mobile {
+      display: none !important;
+    }
+  }
+</style>
+
+<!-- MOBILE OFERTA ESPECIAL: Clean independent HTML (no WP classes) -->
+<div class="tc-oferta-mobile">
+  <div class="tc-oferta-mobile-card" style="background-image: url('/wp-content/uploads/2018/09/inner_04.jpg')">
+    <div class="tc-oferta-mobile-card-content">
+      <span class="tc-oferta-mobile-label">Oferta Especial</span>
+      <p class="tc-oferta-mobile-title">Canalização<br>desde <b>30€</b></p>
+      <a href="tel:+351969146836" class="tc-oferta-mobile-btn">LIGUE JÁ!</a>
+    </div>
+  </div>
+  <div class="tc-oferta-mobile-card" style="background-image: url('/images/hero-desentupimentos.png')">
+    <div class="tc-oferta-mobile-card-content">
+      <span class="tc-oferta-mobile-label">Oferta Especial</span>
+      <p class="tc-oferta-mobile-title">Desentupimentos<br>desde <b>30€</b></p>
+      <a href="tel:+351969146836" class="tc-oferta-mobile-btn">LIGUE JÁ!</a>
+    </div>
+  </div>
+  <div class="tc-oferta-mobile-card" style="background-image: url('/wp-content/uploads/2018/09/inner_06.jpg')">
+    <div class="tc-oferta-mobile-card-content">
+      <span class="tc-oferta-mobile-label">Oferta Especial</span>
+      <p class="tc-oferta-mobile-title">Limpeza de Fossas<br>desde <b>75€</b></p>
+      <a href="tel:+351969146836" class="tc-oferta-mobile-btn">LIGUE JÁ!</a>
+    </div>
+  </div>
+</div>
+
+<section id="bt_bb_section69e3d26039b28" class="bt_bb_section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_overlay_cross_top bt_bb_bottom_spacing_none bt_bb_background_overlay_cross_top" data-bt-override-class="null">
+  <div class="bt_bb_background_image_holder_wrapper">
+    <div style="background-image: url('/wp-content/uploads/2018/09/background_plumbing_01.jpg'); background-attachment: fixed; background-position: center bottom; background-size: cover; background-repeat: no-repeat; transform: translate3d(0,0,0);" class="bt_bb_background_image_holder bt_bb_parallax" data-parallax="0.7"></div>
+
+  </div>
+  <div class="bt_bb_port">
+    <div class="bt_bb_cell">
+      <div class="bt_bb_cell_inner">
+        <div class="bt_bb_row bt_bb_column_gap_0 bt_bb_negative_margin_large tc-oferta-wp-row" style="; --column-gap:0px;">
+          <div class="bt_bb_row_holder">
+            <!-- CARD 1 -->
+            <div style="background-image: url('/wp-content/uploads/2018/09/inner_04.jpg')" class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_column_background_image bt_bb_padding_30 bt_bb_animation_fade_in animate bt_bb_style_shadow" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_30"></div>
+                  <header class="bt_bb_headline bt_bb_color_scheme_6 bt_bb_dash_none bt_bb_superheadline bt_bb_size_normal bt_bb_align_inherit" style="; --headline-primary-color:#ffffff; --headline-secondary-color:#51acfb;">
+                    <h4><span class="bt_bb_headline_superheadline">OFERTA ESPECIAL</span><span class="bt_bb_headline_content"><span>Canalização<br>desde <b>30€</b></span></span></h4>
+                  </header>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"></div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium"></div>
+                  <div class="bt_bb_button bt_bb_color_scheme_10 bt_bb_icon_position_left bt_bb_style_filled bt_bb_size_small bt_bb_width_inline bt_bb_shape_inherit bt_bb_target_self bt_bb_align_inherit" style="; --primary-color:#ffffff; --secondary-color:#ef4c37;">
+                    <a href="tel:+351969146836" class="bt_bb_link" title="LIGUE JÁ!"><span class="bt_bb_button_text">LIGUE JÁ!</span></a>
+                  </div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large"></div>
+                </div>
+              </div>
+            </div>
+            <!-- CARD 2 -->
+            <div style="background-image: url('/wp-content/uploads/2018/09/inner_05.jpg')" class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_column_background_image bt_bb_padding_30 bt_bb_animation_fade_in animate bt_bb_style_shadow" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_30"></div>
+                  <header class="bt_bb_headline bt_bb_color_scheme_6 bt_bb_dash_none bt_bb_superheadline bt_bb_size_normal bt_bb_align_inherit" style="; --headline-primary-color:#ffffff; --headline-secondary-color:#51acfb;">
+                    <h4><span class="bt_bb_headline_superheadline">OFERTA ESPECIAL</span><span class="bt_bb_headline_content"><span>Desentupimentos<br>desde <b>30€</b></span></span></h4>
+                  </header>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"></div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium"></div>
+                  <div class="bt_bb_button bt_bb_color_scheme_10 bt_bb_icon_position_left bt_bb_style_filled bt_bb_size_small bt_bb_width_inline bt_bb_shape_inherit bt_bb_target_self bt_bb_align_inherit" style="; --primary-color:#ffffff; --secondary-color:#ef4c37;">
+                    <a href="tel:+351969146836" class="bt_bb_link" title="LIGUE JÁ!"><span class="bt_bb_button_text">LIGUE JÁ!</span></a>
+                  </div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large"></div>
+                </div>
+              </div>
+            </div>
+            <!-- CARD 3 -->
+            <div style="background-image: url('/wp-content/uploads/2018/09/inner_06.jpg')" class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_column_background_image bt_bb_padding_30 bt_bb_animation_fade_in animate bt_bb_style_shadow" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_30"></div>
+                  <header class="bt_bb_headline bt_bb_color_scheme_6 bt_bb_dash_none bt_bb_superheadline bt_bb_size_normal bt_bb_align_inherit" style="; --headline-primary-color:#ffffff; --headline-secondary-color:#51acfb;">
+                    <h4><span class="bt_bb_headline_superheadline">OFERTA ESPECIAL</span><span class="bt_bb_headline_content"><span>Limpeza de Fossas<br>desde <b>75€</b></span></span></h4>
+                  </header>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_small"></div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium"></div>
+                  <div class="bt_bb_button bt_bb_color_scheme_10 bt_bb_icon_position_left bt_bb_style_filled bt_bb_size_small bt_bb_width_inline bt_bb_shape_inherit bt_bb_target_self bt_bb_align_inherit" style="; --primary-color:#ffffff; --secondary-color:#ef4c37;">
+                    <a href="tel:+351969146836" class="bt_bb_link" title="LIGUE JÁ!"><span class="bt_bb_button_text">LIGUE JÁ!</span></a>
+                  </div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_large"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 24/7 Row -->
+        <div class="bt_bb_row">
+          <div class="bt_bb_row_holder">
+            <div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_normal bt_bb_animation_fade_in animate" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <header class="bt_bb_headline bt_bb_color_scheme_5 bt_bb_dash_none bt_bb_superheadline bt_bb_size_large bt_bb_align_inherit" style="; --headline-primary-color:#252525; --headline-secondary-color:#51acfb;">
+                    <h3><span class="bt_bb_headline_superheadline">O QUE NÓS OFERECEMOS</span><span class="bt_bb_headline_content"><span>Serviço de Emergência <b> 24/7 </b></span></span></h3>
+                  </header>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_double bt_bb_animation_fade_in animate" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_xlarge bt_bb_shape_circle bt_bb_align_left" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;">
+                    <span data-ico-tools="" class="bt_bb_icon_holder"></span>
+                    <div class="bt_bb_service_content">
+                      <div class="bt_bb_service_content_title">SERVIÇO RÁPIDO &amp; CONFIÁVEL</div>
+                      <div class="bt_bb_service_content_text">Pode contar connosco, temos todos os meios para lhe oferecer soluções de alta qualidade em tempo recorde!</div>
+                    </div>
+                  </div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_medium"></div>
+                  <div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_xlarge bt_bb_shape_circle bt_bb_align_left" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;">
+                    <span data-ico-tools="" class="bt_bb_icon_holder"></span>
+                    <div class="bt_bb_service_content">
+                      <div class="bt_bb_service_content_title">SERVIÇOS DE EMERGÊNCIA</div>
+                      <div class="bt_bb_service_content_text">Ligue-nos, vamos resolver os seus problemas num piscar de olhos!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bt_bb_column col-xxl-4 col-xl-4 bt_bb_vertical_align_top bt_bb_align_left bt_bb_padding_double bt_bb_animation_fade_in animate" data-width="4">
+              <div class="bt_bb_column_content">
+                <div class="bt_bb_column_content_inner">
+                  <div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_xlarge bt_bb_shape_circle bt_bb_align_left" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;">
+                    <span data-ico-tools="" class="bt_bb_icon_holder"></span>
+                    <div class="bt_bb_service_content">
+                      <div class="bt_bb_service_content_title">PESSOAL QUALIFICADO &amp; TREINADO</div>
+                      <div class="bt_bb_service_content_text">Contamos com mais de 15 anos de experiência no mercado, os nossos canalizadores são extremamente profissionais.</div>
+                    </div>
+                  </div>
+                  <div class="bt_bb_separator bt_bb_border_style_none bt_bb_bottom_spacing_normal"></div>
+                  <div class="bt_bb_service bt_bb_color_scheme_3 bt_bb_style_borderless bt_bb_size_xlarge bt_bb_shape_circle bt_bb_align_left" style="; --service-primary-color:#51acfb; --service-secondary-color:#252525;">
+                    <span data-ico-tools="" class="bt_bb_icon_holder"></span>
+                    <div class="bt_bb_service_content">
+                      <div class="bt_bb_service_content_title">1 ANO DE GARANTIA</div>
+                      <div class="bt_bb_service_content_text">Oferecemos 1 ano de garantia a todos os equipamentos montados por nós.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  function fixOfertaCards() {
+    if (window.innerWidth > 991) return;
+    const section = document.getElementById('bt_bb_section69e3d26039b28');
+    if (!section) return;
+    const firstRow = section.querySelector('.bt_bb_cell_inner > .bt_bb_row:first-child');
+    if (!firstRow) return;
+    const rowHolder = firstRow.querySelector('.bt_bb_row_holder');
+    if (rowHolder) {
+      rowHolder.style.setProperty('display', 'flex', 'important');
+      rowHolder.style.setProperty('flex-direction', 'column', 'important');
+      rowHolder.style.setProperty('flex-wrap', 'wrap', 'important');
+      rowHolder.style.setProperty('width', '100%', 'important');
+    }
+    const cards = firstRow.querySelectorAll('.bt_bb_column');
+    cards.forEach(function(card) {
+      card.style.setProperty('flex', '0 0 100%', 'important');
+      card.style.setProperty('max-width', '100%', 'important');
+      card.style.setProperty('width', '100%', 'important');
+      card.style.setProperty('min-height', '280px', 'important');
+      card.style.removeProperty('aspect-ratio');
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixOfertaCards);
+  } else {
+    fixOfertaCards();
+  }
+  window.addEventListener('load', fixOfertaCards);
+  window.addEventListener('resize', fixOfertaCards);
+})();
+</script>

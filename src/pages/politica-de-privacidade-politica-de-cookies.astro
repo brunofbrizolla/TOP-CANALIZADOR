@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+// Terms & Privacy Page for Top Canalizador
+---
+
+<Layout>
+  <Header />
+
+  <main class="legal-page">
+    <div class="hero-section">
+      <div class="container">
+        <h1>Políticas & Termos Legais</h1>
+        <p>Transparência e segurança para todos os nossos clientes.</p>
+      </div>
+    </div>
+
+    <div class="container content-wrapper">
+      <div class="legal-grid">
+        <!-- Sidebar Navigation -->
+        <aside class="legal-sidebar">
+          <nav>
+            <ul>
+              <li><a href="#termos" class="active">Termos e Condições</a></li>
+              <li><a href="#privacidade">Política de Privacidade</a></li>
+              <li><a href="#cookies">Política de Cookies</a></li>
+              <li><a href="#litigios">Resolução de Litígios</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <article class="legal-content">
+          <section id="termos">
+            <h2>1. Termos e Condições de Serviço</h2>
+            <p>Ao aceder e utilizar o website da <strong>Top Canalizador</strong>, o utilizador concorda com os seguintes termos:</p>
+            <ul>
+                <li><strong>Serviços:</strong> A Top Canalizador presta serviços de canalização, desentupimentos e manutenção técnica.</li>
+                <li><strong>Responsabilidade:</strong> Não nos responsabilizamos por danos causados pelo uso indevido das informações presentes neste site.</li>
+                <li><strong>Propriedade Intelectual:</strong> Todo o conteúdo, logotipos e design são propriedade da Top Canalizador ou seus licenciadores.</li>
+                <li><strong>Orçamentos:</strong> Orçamentos fornecidos via telefone ou email são estimativas e podem ser alterados após inspeção técnica no local.</li>
+            </ul>
+          </section>
+
+          <hr />
+
+          <section id="privacidade">
+            <h2>2. Política de Privacidade (RGPD)</h2>
+            <p>Em conformidade com o Regulamento Geral de Proteção de Dados (RGPD), a Top Canalizador compromete-se a proteger a privacidade dos seus clientes.</p>
+            <h3>Recolha de Dados</h3>
+            <p>Recolhemos apenas os dados necessários para a prestação do serviço solicitado (nome, telefone, morada e email) através dos nossos formulários de contacto.</p>
+            <h3>Finalidade</h3>
+            <p>Os seus dados são utilizados exclusivamente para:</p>
+            <ul>
+                <li>Agendamento de serviços técnicos.</li>
+                <li>Envio de orçamentos e faturação.</li>
+                <li>Comunicação direta sobre o estado da assistência.</li>
+            </ul>
+            <h3>Direitos do Utilizador</h3>
+            <p>Pode solicitar a qualquer momento a retificação, acesso ou eliminação dos seus dados enviando um email para <strong>Geral@topcanalizador.com</strong>.</p>
+          </section>
+
+          <hr />
+
+          <section id="cookies">
+            <h2>3. Política de Cookies</h2>
+            <p>Este site utiliza cookies para melhorar a navegação do utilizador e analisar o tráfego.</p>
+            <ul>
+                <li><strong>Cookies Necessários:</strong> Essenciais para o funcionamento básico do site.</li>
+                <li><strong>Cookies de Performance:</strong> Utilizados para compreender como os visitantes interagem com o site (Ex: Google Analytics).</li>
+                <li><strong>Cookies de Terceiros:</strong> Como os utilizados pelo nosso chat de suporte (Crisp Chat).</li>
+            </ul>
+          </section>
+
+          <hr />
+
+          <section id="litigios">
+            <h2>4. Resolução de Litígios</h2>
+            <p>Em caso de litígio de consumo, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de Consumo:</p>
+            <p><strong>Centro de Arbitragem de Conflitos de Consumo de Lisboa</strong><br/>
+            Morada: Rua dos Douradores, 116, 2º - 1100-207 LISBOA<br/>
+            Website: <a href="http://www.centroarbitragemlisboa.pt" target="_blank">www.centroarbitragemlisboa.pt</a></p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <CookieConsent />
+</Layout>
+
+<style>
+  .legal-page {
+    background-color: #f8fafc;
+    color: #334155;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+  }
+
+  .hero-section {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #0c1c2c 0%, #1a365d 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+  }
+
+  .hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.8;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .content-wrapper {
+    margin-top: -40px;
+  }
+
+  .legal-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .legal-sidebar {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 100px;
+  }
+
+  .legal-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .legal-sidebar li {
+    margin-bottom: 15px;
+  }
+
+  .legal-sidebar a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .legal-sidebar a:hover, .legal-sidebar a.active {
+    color: #51acfb;
+    background: rgba(81, 172, 251, 0.08);
+  }
+
+  .legal-content {
+    background: white;
+    padding: 60px;
+    border-radius: 32px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  }
+
+  .legal-content h2 {
+    color: #0c1c2c;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+  }
+
+  .legal-content h3 {
+    color: #1e293b;
+    font-size: 1.3rem;
+    margin: 35px 0 15px;
+  }
+
+  .legal-content p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+  }
+
+  .legal-content ul {
+    margin-bottom: 25px;
+    padding-left: 20px;
+  }
+
+  .legal-content li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #f1f5f9;
+    margin: 60px 0;
+  }
+
+  article a {
+    color: #51acfb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  article a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .legal-grid {
+      grid-template-columns: 1fr;
+    }
+    .legal-sidebar {
+      display: none;
+    }
+    .legal-content {
+      padding: 30px;
+    }
+    .hero-section h1 {
+      font-size: 2.2rem;
+    }
+  }
+</style>
