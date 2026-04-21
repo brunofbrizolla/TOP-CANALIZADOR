@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 
 // Clone exato da página de Serviços baseada no HTML original
+import background_heating_07Img from '../assets/images/background_heating_07.jpg';
 ---
 
 <Layout 
@@ -18,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
 
   <main>
     <!-- HERO SECTION -->
-    <section id="bt_bb_section_67b4946399049" class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image bt_bb_background_overlay_gradient" style="background-image:url(/wp-content/uploads/2018/10/background_heating_07.jpg); --section-primary-color:#005299; --section-secondary-color:rgba(0,82,153,0);">
+    <section id="bt_bb_section_67b4946399049" class="bt_bb_section service-hero-section bt_bb_layout_boxed_1200 bt_bb_vertical_align_top bt_bb_background_image bt_bb_background_overlay_gradient" style={`background-image:url(${background_heating_07Img.src}); --section-primary-color:#005299; --section-secondary-color:rgba(0,82,153,0);`}>
         <div class="bt_bb_port">
             <div class="bt_bb_cell">
                 <div class="bt_bb_cell_inner">
