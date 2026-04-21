@@ -62,6 +62,19 @@ var dataLayer=dataLayer||[];</script>
 <script is:inline>var gdpr_options = {};</script>
 <title>{title}</title>
 <meta name="description" content={description}/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-735353172"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-735353172/vYsUCKen5J8cENSy0t4C', {
+    'phone_conversion_number': '969 146 836'
+  });
+</script>
+
 <link rel="canonical" href="https://topcanalizador.com/"/>
 <link rel="preconnect" href="https://topcanalizador.com" />
 <link rel="preconnect" href="https://www.youtube-nocookie.com" />
@@ -851,5 +864,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
 
 
+
+    <!-- Google Ads Click Tracking for Call & WhatsApp Buttons -->
+    <script is:inline>
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="tel:"], a[href*="wa.me"], a[href*="whatsapp.com"]');
+        if (link) {
+          if (typeof gtag !== 'undefined') {
+            const isWhatsApp = link.href.includes('wa.me') || link.href.includes('whatsapp');
+            gtag('event', 'conversion', {
+              'send_to': 'AW-735353172/vYsUCKen5J8cENSy0t4C',
+              'event_label': isWhatsApp ? 'whatsapp_button_click' : 'call_button_click'
+            });
+          }
+        }
+      });
+    </script>
+
 	</body>
+
 </html>
