@@ -73,6 +73,34 @@ var dataLayer=dataLayer||[];</script>
   gtag('config', 'AW-735353172/vYsUCKen5J8cENSy0t4C', {
     'phone_conversion_number': '969 146 836'
   });
+
+  // Event snippet for Clique para ligar conversion page
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-735353172/RGACCJGh3KIcENSy0t4C',
+        'value': 1.0,
+        'currency': 'EUR',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  // Global interceptor for all "tel:" links to ensure conversion tracking
+  document.addEventListener('click', function(event) {
+    var target = event.target.closest('a');
+    if (target && target.href && target.href.toLowerCase().startsWith('tel:')) {
+      // Only intercept if it doesn't already have an onclick that looks like gtag_report_conversion
+      if (!target.getAttribute('onclick') || !target.getAttribute('onclick').includes('gtag_report_conversion')) {
+        event.preventDefault();
+        gtag_report_conversion(target.href);
+      }
+    }
+  }, false);
 </script>
 
 <link rel="canonical" href="https://topcanalizador.com/"/>
