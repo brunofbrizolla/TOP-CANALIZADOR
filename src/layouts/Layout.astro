@@ -76,6 +76,17 @@ var dataLayer=dataLayer||[];</script>
 
   // Event snippet for Clique para ligar conversion page
   function gtag_report_conversion(url) {
+    // If it's a tel: link, we DON'T use the callback to redirect, 
+    // because browsers block async tel: launches.
+    if (url && url.toLowerCase().startsWith('tel:')) {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-735353172/RGACCJGh3KIcENSy0t4C',
+          'value': 1.0,
+          'currency': 'EUR'
+      });
+      return true; // Let the browser handle the tel: link normally
+    }
+
     var callback = function () {
       if (typeof(url) != 'undefined') {
         window.location = url;
@@ -94,9 +105,9 @@ var dataLayer=dataLayer||[];</script>
   document.addEventListener('click', function(event) {
     var target = event.target.closest('a');
     if (target && target.href && target.href.toLowerCase().startsWith('tel:')) {
-      // Only intercept if it doesn't already have an onclick that looks like gtag_report_conversion
+      // If it doesn't have an onclick, we handle it
       if (!target.getAttribute('onclick') || !target.getAttribute('onclick').includes('gtag_report_conversion')) {
-        event.preventDefault();
+        // We DON'T preventDefault for tel: links to avoid gesture issues
         gtag_report_conversion(target.href);
       }
     }
@@ -797,11 +808,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     document.addEventListener('readystatechange', bt_bb_cancel_observer);</script>
     <script is:inline src="/wp-content/cache/wpfc-minified/kx9mvu7e/24ch5.js"></script>
     <script is:inline src="/wp-content/cache/wpfc-minified/q93pli1y/24ch5.js"></script>
-    <script is:inline src="/wp-content/cache/wpfc-minified/kpshirzm/24ch5.js"></script>
-    <script is:inline src="/wp-content/cache/wpfc-minified/7m97r48g/24ch5.js"></script>
-    <script is:inline defer src="/wp-content/cache/wpfc-minified/fcziox44/24ch5.js"></script>
-    <script is:inline defer src="/wp-content/cache/wpfc-minified/8w09lico/24ch5.js"></script>
-    <script is:inline defer src="/wp-content/cache/wpfc-minified/eh78fs9g/24ch5.js"></script>
+    {/* Broken WordPress minified scripts removed to fix console errors */}
+    {/* <script is:inline src="/wp-content/cache/wpfc-minified/kpshirzm/24ch5.js"></script> */}
+    {/* <script is:inline src="/wp-content/cache/wpfc-minified/7m97r48g/24ch5.js"></script> */}
+    {/* <script is:inline defer src="/wp-content/cache/wpfc-minified/fcziox44/24ch5.js"></script> */}
+    {/* <script is:inline defer src="/wp-content/cache/wpfc-minified/8w09lico/24ch5.js"></script> */}
+    {/* <script is:inline defer src="/wp-content/cache/wpfc-minified/eh78fs9g/24ch5.js"></script> */}
 
 
           font-size: 26px;
